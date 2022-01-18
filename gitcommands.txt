@@ -1,0 +1,17 @@
+
+git config --global user.name "coder7874"   //to configure username in the github
+git config --global user.email "gopani7874@gmail.com" //to configur email in the github
+git config --list  //to check what all configuration is there right now - it lists all the current configuration
+    //to check where these lists or configuration file is save in your pc - GO TO HOME DIRECTORY and USE THIS COMMAND
+    //.gitconfig file - you can open that and check all the configuration that we have done
+git clone https://github.com/coder7874/mypython.git   //to clone the repository
+---------------
+After creating file in the folder -- to commit changes - check the status first.
+
+git status  //to check the status of the repositories
+
+git add file_name //to add the file in git and so that future changes can be committed.
+
+
+
+
