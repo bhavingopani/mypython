@@ -17,7 +17,7 @@ git commit -m "First Commit"  OR git commit -m "First commit" file_name(if parti
                 //you have to push the code
 git push -u origin master/branchname   //to push all the commited files
 
-Git Push with Access Token
+Git Push with Access Token   - git push https://<GITHUB_ACCESS_TOKEN>@github.com/<GITHUB_USERNAME>/<REPOSITORY_NAME>.git
     git push https://<Access Token>@github.com/coder7874/mypython.git
 
 

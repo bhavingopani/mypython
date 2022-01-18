@@ -94,10 +94,45 @@
 # else:
 #     print("Sorry You failed!")
 
+#Building a Car Game
+   #> this symbol there then enter command
+   #help command
+        # start  - to start the car
+        #     - print Car Started ... Ready to go
+        # stop   - to stop the car
+        #     - Car stopped
+        # quit   - to exit
+        #     - Program Terminated
+        # if User writes any other command   - just print i dont understand that
 
 
 
-
+new_command = input("> ")
+car_started = False # we are initially make it False as the car not started yet.
+while True: #new_command == "start" or "stop" or "quit" or "help":  # Can also write ---  while True: /which means it block of code will get excuted repeatedly untill that does not exit.
+    if new_command == "help":
+        print(f" start - To start the car\n stop - To stop the car \n quit - To exit")  #can also use multiline """start - to s...  """
+        new_command = input("> ")
+    elif new_command == "start":
+        if car_started:     #this automatically means car_started = True
+            print("Car is already started!")
+        else:
+            car_started = True
+            print("Car Started... Ready to go!")
+        new_command = input("> ")
+    elif new_command == "stop":
+        if car_started:
+            car_started = False
+            print("Car Stopped")
+        else:
+            car_started:False
+            print("Car is already stopped")
+        new_command = input("> ")
+    elif new_command == "quit":
+        exit()  ## can write break
+    else:
+        print("I don't understand that")
+        new_command = input("> ")
 
 
 
