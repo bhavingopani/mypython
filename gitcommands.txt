@@ -9,8 +9,13 @@ git clone https://github.com/coder7874/mypython.git   //to clone the repository
 After creating file in the folder -- to commit changes - check the status first.
 
 git status  //to check the status of the repositories
-
 git add file_name //to add the file in git and so that future changes can be committed.
+git status //again check if added and will be green
+
+git commit -m "First Commit"  OR git commit -m "First commit" file_name(if particular file) //to commit   and -m is to provide comment
+                //Commit does not mean it will be in your git account
+                //you have to push the code
+git push -u origin master   //to push all the commited files
 
 
 
