@@ -289,13 +289,32 @@
 
 #Functions
 
-def greet_user():   # to define a function - gree is the name of function #   () this will consist parameters tat are - we can always pass parameters - can be more than one
-    print('Hi there!')      #anything we write will be for the above function
-    print('Welcome aboard')
-                    #we need 2 lines break just after the function #rule of python
-print("start")
-greet_user() #can assign value to the parameter -- this is called an argument
-print("finish")
+# def greet_user():   # to define a function - gree is the name of function #   () this will consist parameters tat are - we can always pass parameters - can be more than one
+#     print('Hi there!')      #anything we write will be for the above function
+#     print('Welcome aboard')
+#                     #we need 2 lines break just after the function #rule of python
+# print("start")
+# greet_user() #can assign value to the parameter -- this is called an argument
+# print("finish")
+
+#we can directly define parameter as keyword = argument  as below
+# def greet_user(first_name, last_name):
+#     print(f'Hi {first_name} {last_name}')
+#
+# greet_user(last_name="mahesh", first_name="gandhi") #here the order of parameters can be different when we define keyword argument
+#                                                     #you can always do it without keyword but it makes code redeable
+# calc_cost(50,5,0.1) #here the first para is Total price , second is shipping cost and third is 0.1 discount
+#             #someone reading this will not be able to understand -- here we can use keyword to make this redable
+#calc_cost(total_cost = 50, shiping_cost = 5, discount = 0.1) #this is redeable
+#keyword argument always comes after positional arguments
+
+# def square(number):
+#     #number * number #this does not return a value - it will be none if you check and print
+#     #print(number * number)   - when call this later on this will return the value and none as well and we are printing the value or resutlt and function also does the same.
+#     return number * number # return will return a value of a function and we can use it as below
+#           by default every function returns value none - that means absence of a value
+# result = square(3)
+# print(result)
 
 
 
@@ -303,7 +322,34 @@ print("finish")
 
 
 
+# message = input("> ")
+# words  = message.split(' ')  #slipt method will separate where there is this character - here its space. and will also create a list for the same
+# emojis = {
+#     ":)":"😃",
+#     ":(":"😔",
+#     "<3":"😍"
+# }
+# output = ""
+# for word in words:
+#     output = output + emojis.get(word, word) + " "
+# print(output)
 
+#always put all things in a reusable function ... all things which are usable again - should put that only
+#
+# def emojis_function(message):
+#     words_new = message.split(' ')
+#     emojis = {
+#         ":)": "😃",
+#         ":(": "😔",
+#         "<3": "😍"
+#     }
+#     result = ""
+#     for word in words_new:
+#         result = result + emojis.get(word, word) + " "
+#     return result
+#
+# print(emojis_function("Hi I am bhavin :)"))
+#
 
 
 
