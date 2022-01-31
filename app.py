@@ -262,6 +262,60 @@
 #exercise
 #to do - it will ask for phone number
 
+# phone = input("Phone: ")
+# digits_mapping = {
+#     "1": "One",
+#     "2": "Two",
+#     "3": "Three",
+#     "4": "Four"
+# }
+# output = ""
+# for ch in phone:
+#     output += digits_mapping.get(ch, "!") + " "
+# print(output)
+
+#
+# message = input("> ")
+# words  = message.split(' ')  #slipt method will separate where there is this character - here its space. and will also create a list for the same
+# emojis = {
+#     ":)":"😃",
+#     ":(":"😔",
+#     "<3":"😍"
+# }
+# output = ""
+# for word in words:
+#     output += emojis.get(word, word) + " "
+# print(output)
+
+#Functions
+
+def greet_user():   # to define a function - gree is the name of function #   () this will consist parameters tat are - we can always pass parameters - can be more than one
+    print('Hi there!')      #anything we write will be for the above function
+    print('Welcome aboard')
+                    #we need 2 lines break just after the function #rule of python
+print("start")
+greet_user() #can assign value to the parameter -- this is called an argument
+print("finish")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
