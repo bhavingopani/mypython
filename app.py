@@ -366,6 +366,120 @@
 # except ZeroDivisionError:  #when something is divided by zero this will be a typeerror
 #     print('Age cannot be 0')
 
+#Class and Objects
+
+# class Point:             # can define methods and cod under this class
+#     def move(self):  # pycharm automatically add/generates special keyword self there in the bracket
+#         print("move")
+#     def draw(self):    # another methon under class
+#         print("draw")
+#
+# #now defining an object -- its an instance of a class #and a class is a blueprint of template of a class and objects are the instances based on a blueprint
+# #so here we can have hundrends of points - or objects or instances
+# #to create an object do the belwo
+#
+# point1 = Point()  #this creates a new object and returns it and we can store it in a variable
+# point1.draw()   #now we can use the dot operator and we find our defined method - move and draw
+# #this object can also have attributes - They are variables that belong to a particular object - for example
+# point1.x = 10 #here x is an attribute of point1 object
+# point1.y = 20 #here y is an attribute
+# print(point1.y)
+# point1.draw()
+#
+# point2 = Point()
+# point2.x = 1
+# print(point2.x)
+#in short we use classes to define new types and These types can have methods that we define in the body of the class - and they also have attributes that we can set anywhere in program
+
+
+#in the above way... there will be an AttributeError.....and we will have to define x point1.x = 5 value -- to solve this problem
+#constructors  --  here its possible to have point object without x or y coordinates as constructors - we need to know where that point is located - to solve this problem we use constructor
+        #constructor is a function that gets called at the time of creating an object - pass x and y coordinates
+# point3 = Point(10, 20) #to use this we need to add a special method called constructors -- with __init__  (here its init for short of initialization
+# # point3()
+#
+# class Point:
+#     def __init__(self, x , y):  #adding extra parameters x, y   # self is here.. is the reference to the current object
+#           self.x = x              #initializing
+#           self.y = y
+#
+# point = Point(10, 20)
+# print(point.x)
+# point.x = 12            #can also update value
+# print(point.x)
+# print(point.y)
+#exercise
+     #person object should have name attribute so using constructors
+# class Person:
+#     def __init__(self, name): #defining name attribute - we call it constructo
+#         self.name = name
+#     def talk(self):
+#         print(f"Hi, I am {self.name}")
+#
+#
+# # john  = Person()
+# # john.talk()
+#
+# rajesh = Person("Rajesh Solanki")
+# rajesh.talk()
+#
+# mahesh = Person("Mahesh Solanki")
+# mahesh.talk()
+
+#INHERITANCE
+#the below is the repeatation of code
+# class Dog:
+#     def walk(self):
+#         print("walk")
+#
+# class Cat:
+#     def walk(self):
+#         print("walk")
+
+#with inheritance you can write above code as below
+
+# class Mammal:   #instead of the above way what we did was that... we created Mammal class and we inherita other class in dog and cat class
+#     def walk(self):
+#         print("walk")
+#
+#
+# class Dog(Mammal): #this means all the mehtods that Mammal class has inherited to Dog and the same is true for Dog
+#     # pass           # PYTHON does not accept an empty class So if you have nothing to write you can always use pass - so that it will skip the same.
+#     def bark(self):
+#         print("Bark")
+#
+# class Cat(Mammal):
+#     # pass
+#     def cute(self):
+#         print("cuty")
+#
+#
+# dog1 = Dog()
+# dog1.walk()
+# cat1 = Cat()
+# cat1.cute()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
