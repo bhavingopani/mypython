@@ -351,6 +351,25 @@
 # print(emojis_function("Hi I am bhavin :)"))
 #
 
+# age = int(input("What is your age? > "))
+# print(age)
+#exit code 0 in the terminal means - our program terminated successfully
+#exit code 1 or anything - means program crashed
+#to check the code here - you can enter values like --  asd and other things - sdfljnflsn
+# when its error better to print error
+#in python we have contruct called try except
+# try:  ## try except contruct is used to handle exceptions in the language
+#     age = int(input("What is your age? > "))
+#     print(age)
+# except ValueError:      #now python will not crash when its valueerror
+#     print('Invalid Value')
+# except ZeroDivisionError:  #when something is divided by zero this will be a typeerror
+#     print('Age cannot be 0')
+
+
+
+
+
 
 
 
