@@ -459,6 +459,116 @@
 # cat1 = Cat()
 # cat1.cute()
 
+#modules   #its like refering to each file as a module
+        #for example below code is there but we can take the below code and put them in a module called converter
+#the below code we put it in different code
+# def lbs_to_kg(weight):
+#     return weight * 0.45
+#
+# def kg_to_lbs(weight):
+#     return weight / 0.45
+
+#the above code can be put in a module called converter and we can import that module in any programe that needs converter
+
+# import converters  #write this without the extension .py and this is an object now
+# from converters import lbs_to_kg            #if you want to import a specific method from the module that can also be done instead of importing entire module
+# print(lbs_to_kg(100))                #can use this as defined in the above function
+# print(converters.kg_to_lbs(20))
+
+#ALWAYS USE MODULE TO BETTER ORGANIZE OUR CODE.. instead of writing all the code in one module or file
+
+#exercise
+#
+# numbers = [10, 3, 6, 2]
+# max = numbers[0]
+# for number in numbers:
+#     if number > max:
+#         max = number
+# print(max)
+#taken the below code into converter module or file will use it here - this was an example
+# def find_max(numbers):
+#     max = numbers[0]
+#     for number in numbers:
+#         if number > max:
+#             max = number
+#     print(max)
+
+# import utils  #way of importing - importing entire file or module
+# from utils import find_max #another way of importing - to import just a method
+# x = [100,299,398]
+# find_max(x)
+# utils.find_max(x)
+
+# PACKAGES    -- ANOTHER WAY TO ORGANIZE OUR CODE
+#Real projects contain thousand or hundreds of modules  - NO need to add all those modules here in the LEFT BAR
+# because then this directory will be bloated with multiple files
+#just keep only related files only
+
+#best approach is to keep related modules in Packages -- package is a container for multiple modules
+#In file system terms a package is a directory or folder
+#so in a project we can add new directory and in that we add all the related modules
+#all packages or directory has   __init__.py file --- python treat that as package - a directory can not be empty
+
+#ecommerce is a package that we have created
+#to use that
+# import ecommerce.shipping  #one way
+# from ecommerce import shipping #to import one module from a package -
+# from ecommerce.shipping import calc_shipping  #another way to import specific
+# calc_shipping()
+# ecommerce.shipping.calc_shipping()
+# shipping.calc_shipping()
+
+#GENERATING RAMDOM VALUES
+
+#using built-in python modules -
+
+import random  #its built-in module so we dont need file in the directory
+
+# for i in range(4):
+#     print(random.random()) #can use random as object and can use dot operater to access it   #random method generates random value between 0 to 1
+# #print between numbers - check other method
+# for x in range(3):
+#     print(random.randint(10, 20))
+#can also print random from list
+# members = ['bhavin', 'sukhi', 'rajesh']
+# random.choice(members)    #choice is a method that we can use from the built in random module - like other methods
+# print(random.choice(members))
+
+#EXERCISE OF RANDOM  -- Rolling two dice and every time different values
+#THE BELOW DONE BE ME was a wrong method
+# dice1 = [1, 2, 3, 4, 5, 6]
+# dice2 = [1, 2, 3, 4, 5, 6]
+# print((random.choice(dice1),random.choice(dice2)))
+#THE ABOVE DONE BE ME was a wrong method
+
+# class Dice:
+#     def roll(self):
+#         dice1 = [1, 2, 3, 4, 5, 6]  #my way -- but we can use   first number = random.randiant(1,6)
+#         dice2 = [1, 2, 3, 4, 5, 6]  #my way -- but we can use   first number = random.randiant(1,6)
+#         print((random.choice(dice1),random.choice(dice2)))  #we can use return here instead of print -- and will use print when we call the object below
+#
+# dice = Dice()
+# dice.roll()
+#
+
+#WORKING WITH DIRECTORIES
+# from pathlib import Path   #There are two type of paths when working with directories
+
+#Absolute Path  #we start from the root of our harddisk
+    # c:\Program Files\Microsoft   - for windows
+    # /usr/local/bin               - for linux
+#Relative Path  #path from your current directory
+    #can use this
+#Path()  #if we keep it empty , this will refenrence current directory autometically
+# path = Path ()  # we can add file or directory  as string - this returns a path object that we stored in path
+# print(path.exists())   #we can check to see if the path exists by calling the exists method - this will return Boolean
+# path.mkdir()      #we can use mkdir method to create a directory if it does not exist - write down name of the folder or directory in the place of ecommerce
+# path.rmdir()      #the same way we can remove a direcroty
+# print(path.glob('*.py'))   #'' this will define a search patter  '*' - this means all files and folder  and   '*.*' - to get all the files in the current directory and '*.py' or any extension -search for all the py files
+    #this will return or print generator object
+    #SO WE HAVE TO LOOP THROGH IT
+# for file in path.glob('*.py'):   #to print files from the object or instead of printing generator object
+#     print(file)
 
 
 
