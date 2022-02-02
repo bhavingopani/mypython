@@ -79,3 +79,4 @@ Delete Branches
         git branch -d my-branch-name
         git branch -D my-branch-name
     NOTE: The -d option only deletes the branch if it has already been merged. The -D option is a shortcut for --delete --force, which deletes the branch irrespective of its merged status.
+
