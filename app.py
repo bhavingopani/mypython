@@ -570,8 +570,11 @@ import random  #its built-in module so we dont need file in the directory
 # for file in path.glob('*.py'):   #to print files from the object or instead of printing generator object
 #     print(file)
 
+#pypi.org   -- packages - you can find any packages here
 
+#openpyxl  - name of the package in pypi for working with el
 
+#check spreadsheet project in another branch
 
 
 
