@@ -590,36 +590,44 @@ cell = sheet.cell(1,1)        #scond way to access cell - we pass raw 3 and colu
 
 # for row in range(1, sheet.max_row + 1):    #1 added as sheet.max_row give 4 - so it will be 1 2 3  -- so have to add 1 to get 4
 #     print(row)
-
-for row in range(2, sheet.max_row + 1):  #we are starting from 2 as we dont want heading of the first row
-    cell = sheet.cell(row, 3)
-    # print(cell.value)
-    corrected_price = cell.value *  0.9
-    # print(corrected_price)
-    #we need to add the new values in the new column and coordinates
-    corrected_price_cell = sheet.cell(row, 4)
-    # print(corrected_price_cell)
-    corrected_price_cell.value = corrected_price
-
-#adding chart code from here
-values = Reference(sheet,                #we are creating an instance of the Reference class and storing the results in the variable called values or object
-          min_row=2,             #this will consider all cells in these rows that we dont want.. We just want 4th row for the same.
-          max_row=sheet.max_row, #this will consider all cells in these rows that we dont want.. We just want 4th row for the same.
-          min_col = 4,  #by using this and below we are limiting the above two  and cells we are selecing to the 4th column
-          max_col= 4)   #by using this and below we are limiting the above two  and cells we are selecing to the 4th column
-
-#now creating an instancce of BarChart store in a object
-
-chart = BarChart()
-chart.add_data(values) # adding data to chart
-sheet.add_chart(chart, 'e2')    #adding chart to the sheet and also telling where and which cell you that in the sheet
-
-
-wb.save ('transactions2.xlsx')   #to save it in new file - dont accidently overwrite new file as our program might have bug
-
-## NOW YOU HAVE ABOVE the CHART ADDED and -- to play with it you can check openpyxl Documentation
-
-
+#
+# for row in range(2, sheet.max_row + 1):  #we are starting from 2 as we dont want heading of the first row
+#     cell = sheet.cell(row, 3)
+#     # print(cell.value)
+#     corrected_price = cell.value *  0.9
+#     # print(corrected_price)
+#     #we need to add the new values in the new column and coordinates
+#     corrected_price_cell = sheet.cell(row, 4)
+#     # print(corrected_price_cell)
+#     corrected_price_cell.value = corrected_price
+#
+# #adding chart code from here
+# values = Reference(sheet,                #we are creating an instance of the Reference class and storing the results in the variable called values or object
+#           min_row=2,             #this will consider all cells in these rows that we dont want.. We just want 4th row for the same.
+#           max_row=sheet.max_row, #this will consider all cells in these rows that we dont want.. We just want 4th row for the same.
+#           min_col = 4,  #by using this and below we are limiting the above two  and cells we are selecing to the 4th column
+#           max_col= 4)   #by using this and below we are limiting the above two  and cells we are selecing to the 4th column
+#
+# #now creating an instancce of BarChart store in a object
+#
+# chart = BarChart()
+# chart.add_data(values) # adding data to chart
+# sheet.add_chart(chart, 'e2')    #adding chart to the sheet and also telling where and which cell you that in the sheet
+#
+#
+# wb.save ('transactions2.xlsx')   #to save it in new file - dont accidently overwrite new file as our program might have bug
+#
+#
+# #You can manage the code by creating a function there.,
+# # def process_workbook(filename)
+#     #paste all the above code -- but instead of transctions.xlsx file name we will have file name... SO THAT WE CAN REUSE THE CODE
+#
+#
+#
+#
+# ## NOW YOU HAVE ABOVE the CHART ADDED and -- to play with it you can check openpyxl Documentation
+#
+#
 
 
 
