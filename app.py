@@ -629,6 +629,28 @@ cell = sheet.cell(1,1)        #scond way to access cell - we pass raw 3 and colu
 #
 #
 
+#MACHINE LEARNING
+
+#Step 1 Import the data
+#step 2 Clean the data   (like removing duplicated data - dont include this in out model as the model will learn back the pattern or data - will produce wrong result
+#step 3 Split the data into Training/ TEst Sets
+#step 4 Create model
+#step 5 Train model
+#step 6 Make predictions
+#step 7 Evaluate and Improve
+
+#Use libraries and Tools for machine learning
+ #popular libraries
+    # 1  Numpy   - provides multidimensional array
+    # 2. Pandas  - data analysis library - provides concept called data frame
+    # 3 MatPlotLib - tow dimensional plotting librabry for creating graphs and plots
+    # 4 Scikit-Learn - provides common algorithms like decision tree , nueral network and so on
+#for machine learning project we use environment called jupyter for writing our code
+    #we can use other editors and vscode or terminal -- but its hard in there... as we have to inspect the data very often which is hard in other editor - so using jupyter
+    #To install we will use plateform called anaconda
+
+#used jupyter notebook and run that. 
+#0 femal and 1 is male
 
 
 
