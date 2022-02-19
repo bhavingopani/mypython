@@ -146,12 +146,13 @@
 # for tag in tags:
 #     print(tag.get('href', None))
 
-    
-#WIRE PROTOCOL
+  
 
-#HOW DATA is sent and the format that is understandable by all languages and can talk to any aplication - JSON and XML
-#Sending data accross internet - JSON and XML --- independent of any languages
-#SO first Serializing data  happens and Then Deserializing the same data happens by other application
-#MARK UP language is used or ways to send data between computers especially on Internet and kind of protocol which every applicaion follows to understand the communication and data that is coming from other application
-#XML 
+
+
+
+
+
+
+
 
