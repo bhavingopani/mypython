@@ -147,64 +147,64 @@
 
 #API rate limiting - means -- Number of time you can use - or USAGE LIMIT
 
-#Oauth
+#Oauth (Can check later on)
 
 
-import urllib.request, urllib.parse, urllib.error
-import json
-import requests
+# import urllib.request, urllib.parse, urllib.error
+# import json
+# import requests
 
-url_firstpart = 'https://maps.googleapis.com/maps/api/geocode/json?'  # https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=YOUR_API_KEY
+# url_firstpart = 'https://maps.googleapis.com/maps/api/geocode/json?'  # https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=YOUR_API_KEY
 
 
-while True:
-   address = input('Enter Location: ')
-   if len(address) < 1:
-      break
+# while True:
+#    address = input('Enter Location: ')
+#    if len(address) < 1:
+#       break
    
-   api_key = 'AIzaSyBCECWUQft4k8SQdwv5NvSQLB-9iHfyObs'
+#    api_key = 'AIzaSyBCECWUQft4k8SQdwv5NvSQLB-9iHfyObs'
    
-   # new_url = url_firstpart + urllib.parse.urlencode({'address': address}) + urllib.parse.urlencode({'key': api_key})   # hear urlencode( { 'key' : value}) #here address is there in the url from google api https://developers.google.com/maps/documentation/geocoding/start
-            #we are paasing key and value here and the key name is address because thats how the Google Map API will get the value of address 
-            # We are passing it and concanitating with base url and encoding it to UTF8 / accepted standard as it will go the the server of Google 
+#    # new_url = url_firstpart + urllib.parse.urlencode({'address': address}) + urllib.parse.urlencode({'key': api_key})   # hear urlencode( { 'key' : value}) #here address is there in the url from google api https://developers.google.com/maps/documentation/geocoding/start
+#             #we are paasing key and value here and the key name is address because thats how the Google Map API will get the value of address 
+#             # We are passing it and concanitating with base url and encoding it to UTF8 / accepted standard as it will go the the server of Google 
    
-   # params = urllib.parse.urlencode({
-   #                  'address' : address,
-   #         'key' : api_key
-   #        })
+#    # params = urllib.parse.urlencode({
+#    #                  'address' : address,
+#    #         'key' : api_key
+#    #        })
    
-   params = {
-            'address' : address,
-           'key' : api_key
-          }
+#    params = {
+#             'address' : address,
+#            'key' : api_key
+#           }
    
    
-   response_new_url = requests.get(url_firstpart, params= params)
-   print(response_new_url.url)
+#    response_new_url = requests.get(url_firstpart, params= params)
+#    print(response_new_url.url)
    
-   open_new_url = urllib.request.urlopen(response_new_url.url)
+#    open_new_url = urllib.request.urlopen(response_new_url.url)
    
-   print('Retrieving', open_new_url)
-   # open_new_url = urllib.request.urlopen(new_url)
-   url_read_and_decode = open_new_url.read().decode()
-   print('Retrieved', len(url_read_and_decode), 'characters')
+#    print('Retrieving', open_new_url)
+#    # open_new_url = urllib.request.urlopen(new_url)
+#    url_read_and_decode = open_new_url.read().decode()
+#    print('Retrieved', len(url_read_and_decode), 'characters')
    
-   try:
-      js = json.loads(url_read_and_decode)
-   except:
-      js = None
+#    try:
+#       js = json.loads(url_read_and_decode)
+#    except:
+#       js = None
       
-   if not js or 'status' not in js or js['status'] != 'OK':
-      print('===== Failur To Retrieve =====')
-      print(url_read_and_decode)
-      continue
+#    if not js or 'status' not in js or js['status'] != 'OK':
+#       print('===== Failur To Retrieve =====')
+#       print(url_read_and_decode)
+#       continue
    
-   lat = js["results"][0]["geometry"]["location"]["lat"]
-   lng = js["results"][0]["geometry"]["location"]["lng"]
-   location = js["results"][0]["formatted_address"]
-   print("lat", lat)
-   print("lng", lng)
-   print("Location_Address", location)
+#    lat = js["results"][0]["geometry"]["location"]["lat"]
+#    lng = js["results"][0]["geometry"]["location"]["lng"]
+#    location = js["results"][0]["formatted_address"]
+#    print("lat", lat)
+#    print("lng", lng)
+#    print("Location_Address", location)
    
 # address = "surat"  
 # key = "AIzaSyBCECWUQft4k8SQdwv5NvSQLB-9iHfyObs"
@@ -236,10 +236,41 @@ while True:
 # get_mood_url()   
             
            
-            
-   
-   
-   
+# class PartyAnimal:
+#    x = 0
+#    def party(self):  #self works as alias for an below  - 
+#       self.x = self.x + 2
+#       print(self.x)
+      
+# an = PartyAnimal()      #Contructing and assigning it to an
+# an.party()    #Calling the party method - now when call the party method - passes the parameter which is self and self.x (x is the variable here)
+# an.party()                  
+# an.party()
+
+#the primary purpose of constructor we use to set up any initial values if necessary 
+#the constructor is usually used to set up variables. and The destructor is seldom used
+
+
+class PartyAnimal1:
+    x = 1
+    
+    def __init__(self):  #__init__ is a special name here - is a function is called every time an object is created from class 
+        print('I am constructed')
+
+    def party1(self):
+        self.x = self.x + 1
+        print('So far', self.x)
+        
+ann = PartyAnimal1()
+ann.party1()
+ann.party1()
+ann = 42
+print('ann contains', ann)
+
+
+
+    
+
 
 
 
