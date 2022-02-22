@@ -251,25 +251,57 @@
 #the constructor is usually used to set up variables. and The destructor is seldom used
 
 
-class PartyAnimal1:
-    x = 1
-    
-    def __init__(self):  #__init__ is a special name here - is a function is called every time an object is created from class 
-        print('I am constructed')
+# class PartyAnimal1:
+#     x = 1
+#                 #self is served as the first argument and init method is served as constructor of the class
+#                 #its usually used to initialize some attributes or some functions
+#                 #Because this is the first method which will be called when we create an instance of the class
+#     def __init__(self):  #__init__ is a special name here or is a function/method is called every time an object is created from class - IT IS CALLED WHEN INSTANCE IS ABOUT TO BE CREATED - Construct 
+#         print('I am constructed and the __init__ is called')
 
-    def party1(self):
-        self.x = self.x + 1
-        print('So far', self.x)
+#     def party1(self):
+#         self.x = self.x + 1
+#         print('So far', self.x)
+    
+#     def __del__(self):
+#         print('I am desctructed', self.x)    
+    
         
-ann = PartyAnimal1()
-ann.party1()
-ann.party1()
-ann = 42
-print('ann contains', ann)
+# ann = PartyAnimal1()  ##Creating Instance/object to use it further __init_ is the first method which will be called when we create an instance of the class
+# #have create instance first to access the class -- so created ann = PartyAnimal() - then we can access ann. something something
+# ann.party1()
+# ann.party1()
+# ann = 42 #this is overwriting or vaparising the the above contructors that we have created -- ITS DESCTRUCTOR -SO before this line completes it calls the- SO WILL CALL THE __del__ method and printing 42
+# print('ann contains', ann) #So here ann is no longer an object - its gone its now INTEGER- So object was created and used and now its gone or destroyed
+#We are allowed while building this class or object that i want to be involved at the time of creating OBJECT __init__ and AT THE TIME OF DESTRUCTED so its __del__
 
+#In object oriented programming, a constructor in a class is a special block of statements called when an object is created
+#self is the object itself
 
+class PartyAnimal3:
+    x = 0   #called instance variables or object fields or variables
+    name = ""  #called instance variables or object fields or variables
+    #here we have taken two variables this time
+    def __init__(self, z): #self/PartyAnimal3 is there and its when the object is contructed and z is another parameter
+        self.name = z
+        print(self.name, "constructed")
 
-    
+    def party(PartyAnimal3): #Self can also be written instead of PartyAnimal3
+        PartyAnimal3.x = PartyAnimal3.x + 1
+        print(PartyAnimal3.name, "party count", PartyAnimal3.x)
+
+s = PartyAnimal3("Sully") #creating instance and passing parameter - so it will take place of z
+s.party() #usig the instance
+
+j = PartyAnimal3("Jim") #creating second instance and passing parameter - at the place of z 
+j.party() #using the second instance
+
+j.party()
+s.party()     
+#in the above case we have two independent Instances which retains their respective values of their respactive variables.
+   
+#INHERITANCE   -- its about taking one class and extending and make something new out of it
+
 
 
 
