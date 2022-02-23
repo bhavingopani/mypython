@@ -277,7 +277,7 @@
 
 #In object oriented programming, a constructor in a class is a special block of statements called when an object is created
 #self is the object itself
-
+#class is a template or shape
 class PartyAnimal3:
     x = 0   #called instance variables or object fields or variables
     name = ""  #called instance variables or object fields or variables
@@ -301,6 +301,29 @@ s.party()
 #in the above case we have two independent Instances which retains their respective values of their respactive variables.
    
 #INHERITANCE   -- its about taking one class and extending and make something new out of it
+        #its the ability to extend the class to make a new class
+        
+#for example - there is an existing class with some data and now we just want to modify it or extend it so that we have our required class or method
+#AS A RESULT , We do not have to create a new class and object with new all variables... JUST EXTEND THE EXISTING CLASS -- so its called inheritance
+#its like i have got this code and data -- i just need to add this and i will get this... So that i dont have to create whole new thing or class
+
+#here in the below example we are going to extend the above class PartyAnimal3
+
+class FootballFan(PartyAnimal3):  #here it means - FootballFan inherites everything that PartyAnimal3 including x = 0 variables all methods and objects etc
+                                  #here FootballFan is a class which extends PartyAnimal3 and it has all the capabilities of PartyAnimal3 and more.
+    points= 0                       #now we are going to add a new variable
+    def touchdown(self):
+        self.points = self.points + 7
+        self.party()
+        print(self.name, "points", self.points)
+            
+x = PartyAnimal3("Rajesh")   #self.name = Rajesh and self.x = 1  
+x.party()          #self.name = Rajesh and self.x = 1  
+            
+f = FootballFan("Bhavin") #contructing an objecct or creating instance
+f.party()     #self.x = 1 , self.name = Bhavin
+f.touchdown()  #  self.points = 7 , self.name = Bhavin, self.x = 2(for that party methon in the touchdown method)
+
 
 
 
