@@ -166,7 +166,63 @@ git branch  #now you will see you only have master branch
  git commit -am "added world"      #here -a is for adding and m is for messege.. SO this adds and commits at the same time
 #In short FOR MODIFIED FILES we can use -am and can skip the git add part   -a for adding the modified file and m is for message    
     
-f
+to know git differece  -- use git diff   - to check different files
+
+git diff master   - it will show changes against the master branch
+
+get merge master   - it means master gets updated witht he code that you have locally 
+
+you have to keep your local master branch up to date as well.. So you have take pull the code from the master Branch as other people must have uploaded the code
+
+##UNDOING IN GIT
+
+- If accidently we have put some code in the file and stagged it... WE can undo the stagged file or code by the following
+ 
+ git reset name_of_the_file    (can do it without any arguement)  - add the name of the file that i want to unstage (stagged means when we keep the files ready to commit)
+ git status  (to check if the file is still stagged)
+
+To Undo the commited code   - you can do following
+git reset HEAD~1   #here HEAD is the pointer to the last commit, ~1 means till the 1 - this will tell git about to go 1 commit further and undo what we commited
+                #this will unstage and uncommit those last changes
+#Git does not have a command to go back and undo multiple stange or commit at the same time .. But you can use hash  -- which you can check in the logs 
+if we want to check all the commit  and the log
+git log     - it will show all the commits in reverse chronological order  -- with hash code which is unique for each commit
+
+#so if we want to unstage or uncommit all the changes after some point then..
+git reset hash_name  #so git will unstage all the changes after that particular hash of commit
+
+#Now if we want to remove all the changes after a particual commit -- So it means we dont just want uncommit or unstage -- we want to completely remove the same.
+git reset --hard hash_name   #so it will remove all the chnages from the files.
+
+
+#FORKING in git
+
+when click on the fork button in the git interface it will create a copy of the entire repositories
+
+- this is not usually for our repositories. Sometimes what happens is.. we want to make change to the others repo...or public repo and contribute something....
+ - in this case we can just make changes directly or we may not have access to make changes directly. 
+ - So here what we can do is .. we can fork the entire code and make changes accordingly. and then go ahead.
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
