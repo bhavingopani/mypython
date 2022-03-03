@@ -1,13 +1,4 @@
 # from arithmetic_arranger import arithmetic_arranger
-
-
-# def arithmetic_arranger([a,b,c,d,e]):
-#    for item in params:
-#      print(item)    # output ['10+12', '15+50']    -- WE HAVE TO CONVERT THIS DATA in to saparate numbers and then creat a tuple and then print that format
-#                           #                   CHECK THIS   https://www.studytonight.com/python-howtos/pass-a-list-to-a-function-to-act-as-multiple-arguments
-# a = arithmetic_arranger(["32 + 698", "3801 - 2"])
-# print(type(a))
-
 # a = "6 + 8"
 # b = eval(a)
 # print(type(b))
@@ -18,29 +9,48 @@ from posixpath import split
 from itertools import count
 
 
-def arithmetic_arranger(list=[], ):   #START FROM HERE https://ivergara.github.io/boolean-arguments-to-functions-in-python.html - Bool or TRUE / FALSE -- WE HAVE TO ADD CONDITION - WHICH WILL BE TRUE OR FALSE>
-  for item in list:
-    # print(type(item))   - its string
-    splitting_string= item.split()   #spliting a string in to ['30', '+', '20']    
-    print("  "),
-    print(splitting_string[0]),
-    print("  "),
-    
-  print("")
-  for itemnew in list:
-    splitting_string1 = itemnew.split()
-    print(splitting_string1[1]),
-    print(""),
-    print(splitting_string1[2]),
-    print("  "),
-  print("")
-  
-  for i in range(len(list)):
-    print("-------"),
-    print("  "),
-    
+def arithmetic_arranger(list=[], x = bool): 
+    try:
+      for i in list:
+        a=eval(i)
+    except:
+      print("Error: Numbers must only contain digits.")
+    else:  
+      if len(list) < 6:
+        for item in list:
+          # print(type(item))   - its string
+          splitting_string= item.split()   #spliting a string in to ['30', '+', '20']    
+          print("  "),
+          print(splitting_string[0]),
+          print("  "),
 
-arithmetic_arranger(["3252 + 6908", "3801 - 2021", "4015 + 4543", "0123 + 5649"])
+        print("")
+        for itemnew in list:
+          splitting_string1 = itemnew.split()
+          print(splitting_string1[1]),
+          print(""),
+          print(splitting_string1[2]),
+          print("  "),
+        print("")
+        
+        for i in range(len(list)):
+          print("-------"),
+          print("  "),
+          
+        print("")
+        if x == True:
+          for i in list:
+            x = eval(i)
+            print(x),
+            print("      "),
+      else:
+        print("Error: Too many problems.")
+
+
+        
+
+
+arithmetic_arranger(["3252 + 6908", "3801 - 2023", "4015 + 4543", "0123 + 5649", "4015 + 4543","4015 + 4543"],True)
 
 
 
