@@ -4,22 +4,44 @@
 # print(type(b))
 # print(b)
 
+  #    Error: Operator must be '+' or '-'.
+
 
 from posixpath import split
 from itertools import count
+import sys
+
+# list = ['23', '+', '40']
+
+# if list[1] != '+' or list[1] != '-':
+#   sys.exit("Error: Operator must be '+' or '-'.")  
 
 
 def arithmetic_arranger(list=[], x = bool): 
     try:
-      for i in list:
-        a=eval(i)
-    except:
+      for j in list:
+        k = eval(j)
+        o = j.split()
+        if o[1] == '*' or o[1] == '/':
+          print("Error: Operator must be '+' or '-'.")
+          sys.exit()
+        if len(o[0]) > 4 or len(o[2]) > 4:
+          print("Error: Numbers cannot be more than four digits.")
+          sys.exit()  #we could have passed the above print statement here.. But the program could not have stopped with exit code 0 - that means it was not terminated successfully. That's why we added that in diffrent print statement
+    except SyntaxError:
       print("Error: Numbers must only contain digits.")
-    else:  
+      sys.exit()
+    
+    try:
+      for v in list:
+        c=eval(v)     
+    except SyntaxError:
+      print("Error: Numbers must only contain digits.")
+    else: 
       if len(list) < 6:
-        for item in list:
+        for f in list:
           # print(type(item))   - its string
-          splitting_string= item.split()   #spliting a string in to ['30', '+', '20']    
+          splitting_string= f.split()   #spliting a string in to ['30', '+', '20']    
           print("  "),
           print(splitting_string[0]),
           print("  "),
@@ -33,24 +55,27 @@ def arithmetic_arranger(list=[], x = bool):
           print("  "),
         print("")
         
-        for i in range(len(list)):
+        for b in range(len(list)):
           print("-------"),
           print("  "),
           
         print("")
         if x == True:
-          for i in list:
-            x = eval(i)
+          for u in list:
+            x = eval(u)
             print(x),
             print("      "),
+      
+      
       else:
-        print("Error: Too many problems.")
-
-
+        print("Error: Too many problems.") 
+      # else:    
+      #   sys.exit("Error: Operator must be '+' or '-'.")
+    # print("out of loop")     
         
 
 
-arithmetic_arranger(["3252 + 6908", "3801 - 2023", "4015 + 4543", "0123 + 5649", "4015 + 4543","4015 + 4543"],True)
+arithmetic_arranger(["3452 - 6408", "301 + 2023", "4015 + 4543", "0123 + 5649", "4015 + 4543"], True)
 
 
 

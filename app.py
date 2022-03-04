@@ -166,7 +166,7 @@
 # sum = 0
 # for item in prices:
 #     sum = sum + item # here we can use augmented assignment operators to simplify the code  --
-# #    sum += item    #augmented assignment operator - assume if we need to add 7 to a variable “a” and assign the result back to “a”, so we can use it
+#     sum += item    #augmented assignment operator - assume if we need to add 7 to a variable “a” and assign the result back to “a”, so we can use it
 # print(sum)
 #
 
@@ -287,6 +287,8 @@
 #     output += emojis.get(word, word) + " "
 # print(output)
 
+
+
 #Functions
 
 # def greet_user():   # to define a function - gree is the name of function #   () this will consist parameters tat are - we can always pass parameters - can be more than one
@@ -315,6 +317,10 @@
 #           by default every function returns value none - that means absence of a value
 # result = square(3)
 # print(result)
+
+
+
+
 
 
 
