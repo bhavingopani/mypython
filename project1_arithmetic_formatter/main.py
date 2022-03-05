@@ -1,129 +1,16 @@
-# from arithmetic_arranger import arithmetic_arranger
-# a = "6 + 8"
-# b = eval(a)
-# print(type(b))
-# print(b)
+# from pytest import main
+from arithmetic_arranger import arithmetic_arranger
+  
 
-  #    Error: Operator must be '+' or '-'.
+# arithmetic_arranger(["345 - 6584", "301 + 2243", "4015 + 4543", "123 + 649", "4007 + 5543"],True)
 
 
-from posixpath import split
-from itertools import count
-import sys
+arithmetic_arranger(['32 + 6348', '1 - 3801', '45 + 43', '123 + 49', '988 + 40'], True)
 
 
 
-# list = ['23', '+', '40']
-
-# if list[1] != '+' or list[1] != '-':
-#   sys.exit("Error: Operator must be '+' or '-'.")  
-
-
-def arithmetic_arranger(list=[], x = bool): 
-    # max_len = -1
-    # for q in list:
-    #   # g = eval(q)
-    #   p = q.split()
-    #   print(type(p))
-    #   # if len(p) > max_len:
-    #   #   max_len = len(p)
-    #   max_len=max(p,key=len)
-    #   print(max_len)
-    #   print(len(max_len))
-      
-       
-    try:
-      for j in list:
-        k = eval(j)
-        o = j.split()
-        if o[1] == '*' or o[1] == '/':
-          print("Error: Operator must be '+' or '-'.")
-          sys.exit()
-        if len(o[0]) > 4 or len(o[2]) > 4:
-          print("Error: Numbers cannot be more than four digits.")
-          sys.exit()  #we could have passed the above print statement here.. But the program could not have stopped with exit code 0 - that means it was not terminated successfully. That's why we added that in diffrent print statement
-    except SyntaxError:
-      print("Error: Numbers must only contain digits.")
-      sys.exit()
-    
-    try:
-      for v in list: 
-        c=eval(v)     
-    except SyntaxError:
-      print("Error: Numbers must only contain digits.")
-    else: 
-      if len(list) < 6:
-        for f in list:
-          # print(type(item))   - its string
-          splitting_string= f.split()   #spliting a string in to ['30', '+', '20']    
-          max_len_string=max(splitting_string,key=len)
-          # print(max_len_string)
-          maximum_len_new1= len(max_len_string)
-          # print(maximum_len_new1)
-          # len_of_first_element= len(splitting_string[0])   #as we want to make the 1 space from operater and if its one line than max space of charactor of the largest + 'space of operator'
-          # print(maximum_len)
-          # print(maximum_len)
-          # print(" "),   #LOGEST OF OPERANDS AND OPERATOR SHOULD HAVE 1 SPACE ONLY --- first row starting from the 1st number
-          # str = splitting_string[0]
-          # e = numpy.char.rjust
-          # print(maximum_len)
-          # print(type(maximum_len))
-          # print(type(splitting_string[0]))
-          print(splitting_string[0].rjust(maximum_len_new1 + 2 )), # 1 for operater and 1 for (between the 2nd operand and operater there will be 1 space ..so 2 space.)
-          # print(splitting_string[0]),
-          # print(""),  #by default there is one space here and 1 space of print statement and join... and 2 space we give.. So total 4 spaces
-          # 
-          print("  "),  #3 spaces -- as its not dynamic -- 1 by defaut and 3 we added -- so that both the problem has 4 spaces in between
-        print("")  #for new line
-        # sys.exit()
-        for itemnew in list:
-          splitting_string1 = itemnew.split()
-          max_len_new2=max(splitting_string1,key=len)
-          maximum_len_new2= len(max_len_new2)   #its not two because its from the operator
-          # len_of_second_element= len(splitting_string1[2]) 
-          # print(maximum_len_new)
-          # print(""), #4 spaces required
-          print(splitting_string1[1]), #4 spaces required so.
-          # print(""),
-          # print(maximum_len_new2)
-          print(splitting_string1[2].rjust(maximum_len_new2)),  
-          # print(splitting_string1[2]),
-          print("  "),   #4 spaces - no need any dynamic value
-        print("")   #for new line
-        
-        for b in list:
-          splitting_b = b.split()
-          max_len_string1=max(splitting_b,key=len)
-          maximum_len_new3= len(max_len_string1) 
-          print("-"*(maximum_len_new3+2)),
-          # print("-------"),
-          print("  "),
-          
-        print("") #for new line
-        if x == True:
-          for u in list:
-            splitting_u = u.split()
-            max_len_string2=max(splitting_u,key=len)
-            maximum_len_new4= len(max_len_string2) 
-            # print(maximum_len_new4)
-            
-            x = eval(u)
-            # print(""),
-            print(str(x).rjust(maximum_len_new4+2)),
-            print("  "),
-      
-      
-      else:
-        print("Error: Too many problems.") 
-      # else:    
-      #   sys.exit("Error: Operator must be '+' or '-'.")
-    # print("out of loop")     
-        
-
-
-arithmetic_arranger(["345 - 6584", "301 + 2243", "4015 + 4543", "123 + 649", "4007 + 5543"],True)
-
-
+# Run unit tests automatically
+# main()
 
 
 
