@@ -166,7 +166,6 @@
 # sum = 0
 # for item in prices:
 #     sum = sum + item # here we can use augmented assignment operators to simplify the code  --
-#     sum += item    #augmented assignment operator - assume if we need to add 7 to a variable “a” and assign the result back to “a”, so we can use it
 # print(sum)
 #
 
@@ -278,9 +277,7 @@
 # message = input("> ")
 # words  = message.split(' ')  #slipt method will separate where there is this character - here its space. and will also create a list for the same
 # emojis = {
-#     ":)":"😃",
-#     ":(":"😔",
-#     "<3":"😍"
+
 # }
 # output = ""
 # for word in words:
@@ -317,8 +314,66 @@
 #           by default every function returns value none - that means absence of a value
 # result = square(3)
 # print(result)
-
-
+  
+#
+#
+# list = ['3801 - 2', '123 + 49']
+#
+# try:
+#     for j in list:
+#       k = eval(j)
+#       o = j.split()
+#       if o[1] == '*' or o[1] == '/':
+#         print("Error: Operator must be '+' or '-'.")
+#         # sys.exit()
+#       if len(o[0]) > 4 or len(o[2]) > 4:
+#         print("Error: Numbers cannot be more than four digits.")
+#         # sys.exit()
+# except SyntaxError:
+#     print("Error: Numbers must only contain digits.")
+#
+#   # try:
+#   #   for v in list:
+#   #     c=eval(v)
+#   # except SyntaxError:
+#   #   print("Error: Numbers must only contain digits.")
+# else:
+#     if len(list) < 6:
+#       for f in list:
+#         splitting_string= f.split()
+#         max_len_string=max(splitting_string,key=len)
+#         maximum_len_new1= len(max_len_string)
+#         print(splitting_string[0].rjust(maximum_len_new1 + 2 )),
+#         print("  "),
+#       print("")
+#       for itemnew in list:
+#         splitting_string1 = itemnew.split()
+#         max_len_new2=max(splitting_string1,key=len)
+#         maximum_len_new2= len(max_len_new2)   #its not two because its from the operator
+#         print(splitting_string1[1]),
+#         print(splitting_string1[2].rjust(maximum_len_new2)),
+#         print("  "),
+#       print("")
+#       for b in list:
+#         splitting_b = b.split()
+#         max_len_string1=max(splitting_b,key=len)
+#         maximum_len_new3= len(max_len_string1)
+#         print("-"*(maximum_len_new3+2)),
+#         print("  "),
+#       print("")
+#     #   if x == True:
+#       for u in list:
+#           splitting_u = u.split()
+#           max_len_string2=max(splitting_u,key=len)
+#           maximum_len_new4= len(max_len_string2)
+#           x = eval(u)
+#           print(str(x).rjust(maximum_len_new4+2)),
+#           print("  "),
+#         #   print(""),
+#       print("")
+#     else:
+#       print("Error: Too many problems.")
+#
 
 
 
@@ -331,9 +386,6 @@
 # message = input("> ")
 # words  = message.split(' ')  #slipt method will separate where there is this character - here its space. and will also create a list for the same
 # emojis = {
-#     ":)":"😃",
-#     ":(":"😔",
-#     "<3":"😍"
 # }
 # output = ""
 # for word in words:
@@ -345,9 +397,7 @@
 # def emojis_function(message):
 #     words_new = message.split(' ')
 #     emojis = {
-#         ":)": "😃",
-#         ":(": "😔",
-#         "<3": "😍"
+#
 #     }
 #     result = ""
 #     for word in words_new:
@@ -528,7 +578,7 @@
 
 #using built-in python modules -
 
-import random  #its built-in module so we dont need file in the directory
+# import random  #its built-in module so we dont need file in the directory
 
 # for i in range(4):
 #     print(random.random()) #can use random as object and can use dot operater to access it   #random method generates random value between 0 to 1

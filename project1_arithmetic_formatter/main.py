@@ -5,7 +5,7 @@ from arithmetic_arranger import arithmetic_arranger
 # arithmetic_arranger(["345 - 6584", "301 + 2243", "4015 + 4543", "123 + 649", "4007 + 5543"],True)
 
 
-arithmetic_arranger(['32 + 6348', '1 - 3801', '45 + 43', '123 + 49', '988 + 40'], True)
+arithmetic_arranger(['32 - 698', '1 - 3801', '45 + 43', '123 + 49', '988 + 40'], True)
 
 
 
