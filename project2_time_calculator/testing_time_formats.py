@@ -127,7 +127,7 @@ for i , element in x:
                 print(finding_index)
                 # finding_index = 
 
-output_day=possible_input_day[finding_index-1]
+    output_day=possible_input_day[finding_index-1]
 # print(output)
 
 # sys.exit()  

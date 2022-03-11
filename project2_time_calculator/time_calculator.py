@@ -1,7 +1,5 @@
-import sys
+# import sys
 
-
-# from datetime import datetime
 
 
 # x = "06:30 PM"
@@ -26,7 +24,7 @@ import sys
 # if type(input_day)== None:
 #     print("yes its none")
 # sys.exit()
-def add_time(input_start_time, input_duration_hh_mm , input_day=None): #hear input_day is optional
+def add_time(input_start_time, input_duration_hh_mm , input_day): #hear input_day is optional
 
 
 
@@ -92,16 +90,34 @@ def add_time(input_start_time, input_duration_hh_mm , input_day=None): #hear inp
                 if number_of_days < 7:
                     if total > 7:
                         days_calculation= divmod(total , 7)
-                        finding_index= i +days_calculation[1]
-                    if total < 7:
-                        finding_index = finding_index - 7
-                        if finding_index == int[i] +1:
-                         after_n_days = "(next day)"
-                        
-                
+                        finding_index= days_calculation[1]
+                        if finding_index == 0:
+                            finding_index = 7
+                            # days_calculation= divmod(total , 7)
+                            # finding_index = days_calculation[1]
+
+                    if total <= 7:
+                        finding_index = total
+                        # if finding_index == int[i] +1:
+                        #  after_n_days = "(next day)"
+                        # if finding_index > int[i] + 1
+                        #  after_n_days = 
+                    # if total == 7:
+                    #     finding_index = total
+            if number_of_days > 7:
+                # if total > 7:
+                days_calculation= divmod(total , 7)
+                finding_index= days_calculation[1]
+                if finding_index == 0:
+                    finding_index = 7
+
+               
+                # if finding_index > 7:
+                #     days_calculation= divmod(total , 7)
+                #     finding_index = days_calculation[1] #now the remainder is the answer
 
 
-    output_day=possible_input_day[finding_index-1]  #possible_input_day -index starts with 0 -- so we are doing -1 as ours is as per 1
+    output_day=x[finding_index][1]  #possible_input_day -index starts with 0 -- so we are doing -1 as ours is as per 1
 
     if 12 < hrs < 24 and am_pm == "PM":
         hrs = hrs - 12
@@ -163,61 +179,86 @@ def add_time(input_start_time, input_duration_hh_mm , input_day=None): #hear inp
                 am_pm = "PM"
 
 
-    if number_of_days >1 or number_of_days < 2:
-        n_days = "next day"
-        print("=")
-        print(type(n_days))
-        print(n_days)
-        print("=")
-    if number_of_days > 2:
-        n = number_of_days
-        n_days = str(n) + " " + "days later"
-        print("===")
-        print(n_days)
-        print("===")
-
-    print("=-=-=-=--=-=-=-=-=-=")
-    print(hrs)
-    print(f"{mm:02d}")
-    print(am_pm)
-    # print(n_days)
-    print(output_day)
-    print("=-=-=-=--=-=-=-=-=-=")
+    # if number_of_days >1 or number_of_days < 2:
+    #     n_days = "next day"
+    #     print("=")
+    #     print(type(n_days))
+    #     print(n_days)
+    #     print("=")
+    # if number_of_days > 2:
+    #     n = number_of_days
+    #     n_days = str(n) + " " + "days later"
+    #     print("===")
+    #     print(n_days)
+    #     print("===")
 
 
 
 
 
 
-# hrs = "09"    #
-# minutes = "40"  # will be a while number less than 60  By default user knows that
-# hrs_m = "09:40"
-# am_pm = "PM"
+    # print("=-=-=-=MIDDLE OUTPUT TO CHECK--=-=-=-=-=-=")
+    # print(hrs)
+    # print(f"{mm:02d}")
+    # print(am_pm)
+    # # print(n_days)
+    # print(output_day)
+    # print("=-=-=-=--=-=-=-=-=-=")
 
 
 
-#condition 1
-   #if input_day mentioned then print the day ..
-        #the same day if the time is on the same day
-        #print next day if the output day is on the next day
-        #print the respective day if the output day is not on the same or next day - Also print n days later with the day too 
-#condition 2
-    #if input day is not metioned
-        #then dont print any day if its on the same day.
-        #then print next day if the output day is on the next day
-        #then if its more than 1 day
-            #then print only n days later
+
+
+
+    # hrs = "09"    #
+    # minutes = "40"  # will be a while number less than 60  By default user knows that
+    # hrs_m = "09:40"
+    # am_pm = "PM"
+
+
+
+    #condition 1
+    #if input_day mentioned then print the day ..
+            #the same day if the time is on the same day
+            #print next day if the output day is on the next day
+            #print the respective day if the output day is not on the same or next day - Also print n days later with the day too 
+    #condition 2
+        #if input day is not metioned
+            #then dont print any day if its on the same day.
+            #then print next day if the output day is on the next day
+            #then if its more than 1 day
+                #then print only n days later
+                
+    if type(input_day) == None:
+            if number_of_days > 1 and number_of_days < 2:
+                n_days_later = "(next day)"
+                # final_output = hrs + ":" + f"{mm:02d}" + " " + am_pm + " " + after_n_days / next day
+            if number_of_days < 1:
+                n_days_later = ""
+                # final_output with nothing or no day just time and minuet
+            if number_of_days >= 2:
+                n_days_later = "(" + number_of_days + "later)"
+                # final output with n days later
+    if type(input_day) == str:
+            if number_of_days > 1 and number_of_days < 2:
+                final_output_day = output_day
+                n_days_later = "(next day)"
+
+            if number_of_days < 1:
+                final_output_day = input_day
+                n_days_later = ""
+                # final_output  -- print with the same day that is in the input
+            if number_of_days >= 2:
+                final_output_day = output_day
+                n_days_later = "(" + number_of_days + "later)"
+                # final_output -- print with the respective day and also print n days later
             
     if type(input_day) == None:
-        final_output = hrs + ":" + f"{mm:02d}" + " " + am_pm + " " + after_n_days
-
-        #condition set 2 AAPLY.
-    
+        final_output= hrs + ":" + f"{mm:02d}" + " " + am_pm + " " + n_days_later
     if type(input_day) == str:
-             
-        # condition set 1 AAPLY
-    output = hrs + ":" + f"{mm:02d}" + " " + am_pm , str(output_day) , n + "days later"
-print(final_output)
+        final_output = str(hrs) + ":" + f"{mm:02d}" + am_pm + "," + " " + final_output_day + n_days_later
+    
+    return final_output
 
 # add_time("3:00 PM", "3:10")
 # # Returns: 6:10 PM
