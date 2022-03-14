@@ -1,4 +1,4 @@
-from queue import Empty
+
 import sys
 
 from numpy import empty
@@ -60,7 +60,7 @@ def add_time(input_start_time, input_duration_hh_mm , input_day=empty): #hear in
     # print("--------")
     # possible_input_day = ['MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY', 'SUNDAY']
     # if input_day != None: ??
-    for i , element in x:
+    for i in x:
         # print(element)
         # break
         # if input_day == str:  
@@ -71,31 +71,33 @@ def add_time(input_start_time, input_duration_hh_mm , input_day=empty): #hear in
                 # print(i, element) #printing respective index and element
                 # print("----------")
                 # print(number_of_days)  #number_original days to count. with addition of of hrs and mms
-                total = int(i) + int(number_of_days)  #original index number of the day in the list + number_of_days
+                total = int(i[0]) + int(number_of_days)  #original index number of the day in the list + number_of_days
+                # print(total)
+                # sys.exit()
                 # finding_index = int[i]
                 if number_of_days <= 7:
                     if number_of_days == 7:
-                            finding_index = int(i) #its the same i is the index of the input_day in the list  -- index of the list monday to tuesday - starting from 1 to 7 == to find our answer
-                    if number_of_days < 7:
+                            finding_index = int(i[0]) #its the same i is the index of the input_day in the list  -- index of the list monday to tuesday - starting from 1 to 7 == to find our answer
+                    elif number_of_days < 7:
                         if total > 7:
                             days_calculation= divmod(total , 7)
                             finding_index= days_calculation[1]
                             if finding_index == 0:
                                 finding_index = 7
-                        if total <= 7:
+                        elif total <= 7:
                             finding_index = total
                         # if total == 0:
                         #     finding_index  
-                    if number_of_days > 7:
-                        days_calculation= divmod(total , 7)
-                        finding_index= days_calculation[1]
-                        if finding_index == 0:
-                            finding_index = 7
+                elif number_of_days > 7:
+                    days_calculation= divmod(total , 7)
+                    finding_index= days_calculation[1]
+                    if finding_index == 0:
+                        finding_index = 7
       
     
-    
-    output_day=x[finding_index-1][1]  #possible_input_day -index starts with 0 -- so we are doing -1 as ours is as per 1
-    print(output_day)
+    # sys.exit()
+    output_day = x[finding_index-1][1]  #possible_input_day -index starts with 0 -- so we are doing -1 as ours is as per 1
+    # print(output_day)
     # sys.exit() 
     if 12 < hrs < 24 and am_pm == "PM":
         hrs = hrs - 12
@@ -107,7 +109,7 @@ def add_time(input_start_time, input_duration_hh_mm , input_day=empty): #hear in
         # this indicates next day
     # if more than 1 day
     # hrs1 = 24
-    if hrs == 12 and am_pm == "AM":
+    elif hrs == 12 and am_pm == "AM":
         hrs = hrs
         am_pm = "PM"
         # n_days = "next day"
@@ -116,7 +118,7 @@ def add_time(input_start_time, input_duration_hh_mm , input_day=empty): #hear in
         hrs = hrs
         am_pm = "AM"
         # n_days = "next day"
-    if hrs == 24 and am_pm == "AM":
+    elif hrs == 24 and am_pm == "AM":
         hrs = int(x2[0])  # it stays the same .. after 24 hrs -- time will be same
         am_pm = "AM"  # after 24 hrs it will be AM only.
 
@@ -134,7 +136,7 @@ def add_time(input_start_time, input_duration_hh_mm , input_day=empty): #hear in
             hrs = int(x2[0]) + int(t_hrs[1])
             if hrs > 12:
                 hrs = hrs - 12
-        if (t_hrs[0] % 2) == 1:  # its odd .. meaning 23/12   -- if the quotient is odd  here value is 1 Change am_pm and 11 styas the smae.
+        elif (t_hrs[0] % 2) == 1:  # its odd .. meaning 23/12   -- if the quotient is odd  here value is 1 Change am_pm and 11 styas the smae.
             am_pm = "PM"
             hrs = int(x2[0]) + int(t_hrs[1])
             if hrs > 12:
@@ -149,27 +151,32 @@ def add_time(input_start_time, input_duration_hh_mm , input_day=empty): #hear in
             if hrs > 12:
                 hrs = hrs - 12
                 am_pm = "AM"
-        if (t_hrs[0] % 2) == 1:  # its odd .. meaning 23/12   -- can not devide which means 12 and 11   +12 is Change am_pm and 11 styas the smae.
+        elif (t_hrs[0] % 2) == 1:  # its odd .. meaning 23/12   -- can not devide which means 12 and 11   +12 is Change am_pm and 11 styas the smae.
             am_pm = "AM"
             hrs = int(x2[0]) + int(t_hrs[1])
             if hrs > 12:
                 hrs = hrs - 12
                 am_pm = "PM"
-        
+    # sys.exit()
+    global final_output    
     if input_day == empty:
-             
+        # global final_output
         if number_of_days > 1 and number_of_days < 2:
             n_days_later = "(next day)"
             final_output = str(hrs) + ":" + f"{mm:02d}" + " " + am_pm
             # final_output = hrs + ":" + f"{mm:02d}" + " " + am_pm + " " + after_n_days / next day
         elif number_of_days < 1:
-            n_days_later = empty   ??? #HAVE TO ADD LOGIC FOR AM AND PM CHANGE --- < 1 Does not always Answer the question like Next Day.
-            final_output = str(hrs) + ":" + f"{mm:02d}" + " " + am_pm
+            n_days_later = empty   #??? #HAVE TO ADD LOGIC FOR AM AND PM CHANGE --- < 1 Does not always Answer the question like Next Day.
+            if am_pm != x1[1] and x1[1] == "PM" :
+                n_days_later = "(next day)"
+                final_output = str(hrs) + ":" + f"{mm:02d}" + " " + am_pm + " " + n_days_later
+            else:
+                final_output = str(hrs) + ":" + f"{mm:02d}" + " " + am_pm
             # final_output with nothing or no day just time and minuet
         elif number_of_days >= 2:
-            n_days_later = "(" + number_of_days + "later)"
+            n_days_later = "(" + str(number_of_days) + " " + "days later)"
             final_output = str(hrs) + ":" + f"{mm:02d}" + " " + am_pm + " " + n_days_later
-
+        
             # final output with n days later
 
         # final_output = str(hrs) + ":" + f"{mm:02d}" + "  " + am_pm + " " + n_days_later    
@@ -177,32 +184,29 @@ def add_time(input_start_time, input_duration_hh_mm , input_day=empty): #hear in
         
         # print(type(input_day))
     # if input_day == str:
-    else:
+    # elif input_day == str:
     # if input_day == empty:
         # global final_output 
+    
+    # sys.exit()
+    else:
         if number_of_days > 1 and number_of_days < 2:
+            # global final_output
             final_output_day = output_day
             n_days_later = "(next day)"
+            # global final_output
             final_output = str(hrs) + ":" + f"{mm:02d}" + " " + am_pm + "," + " " + final_output_day + n_days_later
         elif number_of_days < 1:
+            # global final_output
             final_output_day = input_day  #monday
             n_days_later = empty
             final_output = str(hrs) + ":" + f"{mm:02d}" + " " + am_pm + "," + " " + final_output_day
         elif number_of_days >= 2:
+            # global final_output
             final_output_day = output_day
             n_days_later = "(" + number_of_days + "later)"
             final_output = str(hrs) + ":" + f"{mm:02d}" + " " + am_pm + "," + " " + final_output_day + n_days_later
-        
-            
-        # sys.exit() 
     
-            
-    # if input_day == empty:
-        
-    # # elif input_day == empty:
-    # else:
-        
-
     return final_output
     # return final_output
 
@@ -223,8 +227,7 @@ def add_time(input_start_time, input_duration_hh_mm , input_day=empty): #hear in
 
 # add_time("6:30 PM", "205:12")
 # # Returns: 7:42 AM (9 days later)
-
-print(add_time("10:10 PM", "3:30"))   # NOT PASSED
+# add_time("11:43 PM", "24:20", "tueSday")  # NOT PASSED
 #     #Traceback (most recent call last):
 #   File "/home/g21/Projects/mypython/project2_time_calculator/test_code.py", line 282, in <module>
 #     add_time("3:00 PM", "3:10")
