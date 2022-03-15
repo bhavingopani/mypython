@@ -50,8 +50,10 @@ def add_time(input_start_time, input_duration_hh_mm , input_day=empty): #hear in
     # print(hrs) #checking again after the above check
     # print(mm)
     # print("------")
-
-    number_of_days = int(hrs / 24) #finding the number of total days to count after hh mm counting
+    days_hrs_calculation = divmod(hrs, 24)
+    number_of_days = days_hrs_calculation[0]
+    number_of_hrs_left = days_hrs_calculation[1]
+    # number_of_days = int(hrs / 24) #finding the number of total days to count after hh mm counting
     # print(number_of_days)
     # sys.exit()
     # print("+++-------")

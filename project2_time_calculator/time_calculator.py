@@ -50,8 +50,10 @@ def add_time(input_start_time, input_duration_hh_mm , input_day=empty): #hear in
     # print(hrs) #checking again after the above check
     # print(mm)
     # print("------")
-
-    number_of_days = int(hrs / 24) #finding the number of total days to count after hh mm counting
+    days_hrs_calculation = divmod(hrs, 24)
+    number_of_days = days_hrs_calculation[0]
+    number_of_hrs_left = days_hrs_calculation[1]
+    # number_of_days = int(hrs / 24) #finding the number of total days to count after hh mm counting
     # print(number_of_days)
     # sys.exit()
     # print("+++-------")
@@ -64,7 +66,7 @@ def add_time(input_start_time, input_duration_hh_mm , input_day=empty): #hear in
         # print(element)
         # break
         # if input_day == str:  
-        #     if element == input_day_converted:
+        # if element == input_day:
                 # print("---------")
                 # print(i) #printing the index of matched days
                 # print(element) #printing the respective day 
@@ -128,7 +130,7 @@ def add_time(input_start_time, input_duration_hh_mm , input_day=empty): #hear in
         am_pm = "PM"  # after 24 hrs it will be AM only.
     # print(hrs)
 
-    if hrs > 24 and am_pm == "AM":
+    elif hrs > 24 and am_pm == "AM":
         t_hrs = divmod(hrs, 12)  # built-in function we can use to find qaotient and remainder
         if (t_hrs[0] % 2) == 0:  #it means its its Even for example the quotient is even ..that means after 24 hrs its going to be same am_pm
             am_pm = "AM"
@@ -176,7 +178,9 @@ def add_time(input_start_time, input_duration_hh_mm , input_day=empty): #hear in
         elif number_of_days >= 2:
             n_days_later = "(" + str(number_of_days) + " " + "days later)"
             final_output = str(hrs) + ":" + f"{mm:02d}" + " " + am_pm + " " + n_days_later
-        
+        elif number_of_days == 1:
+            n_days_later = "(next day)"
+            final_output = str(hrs) + ":" + f"{mm:02d}" + " " + am_pm + " " + n_days_later
             # final output with n days later
 
         # final_output = str(hrs) + ":" + f"{mm:02d}" + "  " + am_pm + " " + n_days_later    
