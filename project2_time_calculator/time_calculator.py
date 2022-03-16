@@ -122,7 +122,7 @@ def add_time(input_start_time, input_duration_hh_mm , input_day=empty): #hear in
         # n_days = "next day"
     elif hrs == 24 and am_pm == "AM":
         hrs = int(x2[0])  # it stays the same .. after 24 hrs -- time will be same
-        am_pm = "AM"  # after 24 hrs it will be AM only.
+        am_pm = "AM"      # after 24 hrs it will be AM only.
 
         # n_days = ???
     elif hrs == 24 and am_pm == "PM":

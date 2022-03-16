@@ -7,7 +7,7 @@ from pyparsing import WordStart
 
 #You are in Eourope and lost -- and You want to know what floor i will be if i were in US??
 
-# Europe floor ? 0- Ground floor
+# Europe loor ? 0- Ground floor
 # US floor ? 1    - Ground floor
 
 
